@@ -9,3 +9,12 @@
   display: table;
 }
 
+.StepTitle {
+  background-image: linear-gradient(to left top, #246794, #00609f, #0058a8, #004faf, #0042b3, #223aa7, #30319c, #382990, #362877, #32265f, #2d2448, #262132);
+  padding: 30px 0;
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+}

@@ -1,14 +1,45 @@
-
 import React, { useState } from 'react';
-import './App.css';
 import Size from './components/sizes/Size';
+import './App.css';
 
-function App() {
+const App = () => {
+  // hooks
   const [step, setStep] = useState(1);
   const [size, setSize] = useState('');
+
+  const nextStep = () => {
+    setStep( step + 1 );
+  }
+
+  const clickedItem = (item) => {
+    setSize(item);
+  }
+
+  const stepSwitcher = (step) => {
+    let currentStep = '';
+    switch(step){
+      case 1:{
+        currentStep = 
+        <Size
+          nextStep={nextStep}
+          clickedItem={clickedItem}
+          clickedSize={size}
+        />
+        break;
+      }
+      default: currentStep = <Size
+          nextStep={nextStep}
+          clickedItem={clickedItem}
+          clickedSize={size}
+        />
+        break;
+    }
+    return currentStep;
+  }
+
   return (
     <div className="App">
-      <Size />
+      {stepSwitcher(step)}
     </div>
   );
 }
